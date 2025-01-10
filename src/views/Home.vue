@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1 @click="handleClick">{{ name }}</h1>
+    {{ a }}
     <ElButton type="primary">Primary</ElButton>
   </div>
 </template>
