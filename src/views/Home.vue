@@ -4,7 +4,6 @@
     {{ a }}
     <ElButton type="primary">Primary</ElButton>
   </div>
-  </a>
 </template>
 <script setup lang="ts" name="HomePageComponent">
 import { testPost } from '@/api/testApi'
