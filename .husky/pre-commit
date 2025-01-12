@@ -1,3 +1,2 @@
 #!/usr/bin/env sh
-npx husky install
-npm run lint
+npx lint-staged
