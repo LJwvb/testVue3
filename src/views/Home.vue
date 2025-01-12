@@ -11,7 +11,7 @@
       <ElRadio v-model="test" label="Vue3"> Vue3 </ElRadio>
       <ElRadio v-model="test" label="React"> React </ElRadio>
     </ElForm>
-    <el-button @click="handleClick">Click    med   d11  1</el-button>
+    <ElButton @click="handleClick">Cl ick med d11 1</ElButton>
     <SinglePreview />
   </div>
 </template>
