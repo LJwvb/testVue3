@@ -19,6 +19,10 @@ export default [
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
       'vue/multi-word-component-names': 'off',
+      'vue/component-name-in-template-casing': ['error', 'PascalCase', {
+        registeredComponentsOnly: false,
+        ignores: []
+      }]
     },
   },
 ]
