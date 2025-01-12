@@ -16,6 +16,7 @@
       </ElRadio>
     </ElForm>
     <el-button @click="handleClick">Click me</el-button>
+    <SinglePreview />
   </div>
 </template>
 <script setup lang="ts" name="HomePageComponent">

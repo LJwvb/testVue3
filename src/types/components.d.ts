@@ -15,5 +15,6 @@ declare module 'vue' {
     ElRadio: typeof import('element-plus/es')['ElRadio']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SinglePreview: typeof import('./../components/SinglePreview.vue')['default']
   }
 }
