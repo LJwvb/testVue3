@@ -16,11 +16,11 @@ export default defineConfig({
     AutoImport({
       imports: ['vue', 'vue-router'],
       resolvers: [ElementPlusResolver()],
-      dts: 'src/auto-imports.d.ts',
+      dts: 'src/types/auto-imports.d.ts',
     }),
     Components({
       resolvers: [ElementPlusResolver()],
-      dts: 'src/components.d.ts',
+      dts: 'src/types/components.d.ts',
     }),
   ],
   resolve: {
