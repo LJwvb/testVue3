@@ -8,14 +8,10 @@
         <ElInput v-model="name" placeholder="请输入活动名称"></ElInput>
       </ElFormItem>
       <ElCheckbox v-model="test">Vue3</ElCheckbox>
-      <ElRadio v-model="test" label="Vue3">
-        Vue3
-      </ElRadio>
-      <ElRadio v-model="test" label="React">
-        React
-      </ElRadio>
+      <ElRadio v-model="test" label="Vue3"> Vue3 </ElRadio>
+      <ElRadio v-model="test" label="React"> React </ElRadio>
     </ElForm>
-    <el-button @click="handleClick">Click medd111</el-button>
+    <el-button @click="handleClick">Click medd11  1</el-button>
     <SinglePreview />
   </div>
 </template>
