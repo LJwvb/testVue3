@@ -9,8 +9,8 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
-    "lint": "eslint src",
-    "lint-fix": "eslint src --fix",
+    "lint": "eslint \"src/**/*.{ts,tsx,vue,js,jsx}\"",
+    "lint:fix": "eslint \"src/**/*.{ts,tsx,vue,js,jsx}\" --fix",
     "format": "prettier --write src/"
   },
   "dependencies": {
