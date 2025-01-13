@@ -1,0 +1,16 @@
+.option-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.el-input {
+  margin-bottom: 10px;
+}
+
+.serial-number {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-right: 5px;
+}
