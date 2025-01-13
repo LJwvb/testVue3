@@ -1,15 +1,38 @@
 import { defineStore } from 'pinia'
-export const useUserStore = defineStore('user', {
+import { testGet, testPost } from '@/api/test'
+
+export const useTestStore = defineStore('test', {
   state: () => ({
-    token: '',
+    count: 0,
+    name: 'Pinia',
+    apiData: {},
   }),
   getters: {
-    isLogin: (state) => !!state.token,
+    doubleCount: (state) => state.count * 2,
+    upperCaseName: (state) => state.name.toUpperCase(),
   },
   actions: {
-    async login(data: Record<string, unknown>) {
-      console.log(data)
+    increment() {
+      this.count++
     },
-    async logout() {},
+    setName(newName: string) {
+      this.name = newName
+    },
+    async fetchApiData(params?: Record<string, unknown>) {
+      try {
+        const response = await testGet(params)
+        this.apiData = response.data
+      } catch (error: any) {
+        ElMessage.error(error.message)
+      }
+    },
+    async sendApiData(data?: Record<string, unknown>) {
+      try {
+        const response = await testPost(data)
+        this.apiData = response.data
+      } catch (error: any) {
+        ElMessage.error(error.message)
+      }
+    },
   },
 })

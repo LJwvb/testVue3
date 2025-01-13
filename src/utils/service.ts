@@ -4,6 +4,7 @@ import axios from 'axios'
 import { clearEmptyFields } from '@/utils'
 // 导入MD5加密函数
 import md5 from 'md5'
+import { isEmpty } from 'lodash'
 
 // 创建axios实例，配置基础参数
 const axiosInstance = axios.create({
@@ -18,10 +19,11 @@ const axiosInstance = axios.create({
 // 添加请求拦截器
 axiosInstance.interceptors.request.use(
   (config) => {
+    console.log('请求拦截', config)
     // 清除请求参数中的空字段
-    const _params = clearEmptyFields(config.params || config.data)
+    const _params = clearEmptyFields(config.params || config.data) || {}
     // 获取参数键名并排序
-    const keys = Object.keys(_params).sort()
+    const keys = Object.keys(_params)?.sort()
     // 创建新的参数对象
     const newParams: Record<string, unknown> = {}
     // 按照排序后的键名重新组织参数
@@ -34,15 +36,15 @@ axiosInstance.interceptors.request.use(
     // 根据请求方法类型处理参数
     if (config.method === 'get') {
       // GET请求将参数放在params中
-      config.params = {
-        ...newParams,
-        md5: md5Params,
+      config.params = newParams
+      if (!isEmpty(newParams)) {
+        config.params.md5 = md5Params
       }
     } else {
       // 非GET请求将参数放在data中
-      config.data = {
-        ...newParams,
-        md5: md5Params,
+      config.data = newParams
+      if (!isEmpty(newParams)) {
+        config.data.md5 = md5Params
       }
     }
     // 返回修改后的配置
@@ -75,6 +77,7 @@ export const get = async (url: string, params?: Record<string, unknown>) => {
     // 返回响应数据
     return res.data
   } catch (error) {
+    console.error(error)
     // 错误处理
     return Promise.reject(error)
   }
@@ -88,6 +91,7 @@ export const post = async (url: string, data?: Record<string, unknown>) => {
     // 返回响应数据
     return res.data
   } catch (error) {
+    console.error(error)
     // 错误处理
     return Promise.reject(error)
   }

@@ -1,5 +1,6 @@
 import { defineComponent, ref, watchEffect } from 'vue'
 import { ElInput } from 'element-plus'
+import classNames from 'classnames'
 import type { PropType } from 'vue'
 import styles from './index.module.css' // 修改样式引入
 
@@ -38,7 +39,11 @@ export default defineComponent({
 
     return () => (
       <div class={styles.container}>
-        <ElInput class={styles.input} v-model={title.value} placeholder="标题" />
+        <ElInput
+          class={classNames(styles.input, styles.title)}
+          v-model={title.value}
+          placeholder="标题"
+        />
         <ElInput class={styles.input} v-model={description.value} placeholder="说明" />
         <ElInput class={styles.input} v-model={value.value} type="textarea" />
       </div>
