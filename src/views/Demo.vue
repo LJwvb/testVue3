@@ -4,6 +4,7 @@
     <p>Count: {{ count }}</p>
     <p>Double Count: {{ doubleCount }}</p>
     <p>API Data: {{ apiData }}</p>
+    <p>API Data State: {{ dataState }}</p>
     <button
       @click="increment"
       :class="classNames('btn', { 'btn-primary': count % 2 === 0, 'btn-danger': count % 2 !== 0 })"
@@ -21,12 +22,14 @@
 <script setup lang="ts" name="DemoPageComponent">
 import { useTestStore } from '@/stores/test'
 import classNames from 'classnames'
+import { testPost } from '@/api/test'
 
 const store = useTestStore()
 const name = computed(() => store.name)
 const count = computed(() => store.count)
 const doubleCount = computed(() => store.doubleCount)
 const apiData = computed(() => store.apiData)
+const dataState = reactive<any>({})
 
 const increment = () => {
   store.increment()
@@ -51,9 +54,13 @@ const updateApiData = () => {
     name: 'New Name',
     age: 20,
   }
+  dataState.name = 'New Name from Data State'
 }
 onMounted(() => {
   store.sendApiData()
+  testPost().then((res) => {
+    Object.assign(dataState, res?.data)
+  })
 })
 </script>
 <style scoped>
