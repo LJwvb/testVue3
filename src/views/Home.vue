@@ -12,7 +12,7 @@
       <ElRadio v-model="test" label="React"> React </ElRadio>
     </ElForm>
     <ElButton @click="handleClick">Cl ick med d11 1</ElButton>
-    <SinglePreview />
+    <img src="../assets/images/image1.jpeg" alt="Vue logo" />
   </div>
 </template>
 <script setup lang="ts" name="HomePageComponent">

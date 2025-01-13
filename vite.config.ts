@@ -35,6 +35,20 @@ export default defineConfig({
         drop_debugger: true, // 移除 debugger
       },
     },
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) => {
+          const name = assetInfo.name ?? ''
+          if (/\.(png|jpe?g|gif|svg)$/.test(name)) {
+            return 'img/[name]-[hash][extname]'
+          }
+          if (/\.css$/.test(name)) {
+            return 'css/[name]-[hash][extname]'
+          }
+          return 'assets/[name]-[hash][extname]'
+        },
+      },
+    },
   },
   envDir: './config',
 })
