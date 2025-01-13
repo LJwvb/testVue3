@@ -1,39 +1,65 @@
-# Vue3
+# Vue Basic Framework
 
-This template should help get you started developing with Vue 3 in Vite.
+一个基于Vue 3的基础框架项目。
 
-## Recommended IDE Setup
+## 安装
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+## 开发
 
-```sh
+```bash
+# 启动开发服务器
 npm run dev
-```
 
-### Type-Check, Compile and Minify for Production
+# 类型检查
+npm run type-check
 
-```sh
-npm run build
-```
+# 代码格式化
+npm run format
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
+# 代码检查
 npm run lint
+
+# 代码检查并修复
+npm run lint:fix
+```
+
+## 构建
+
+```bash
+# 构建生产版本
+npm run build
+
+# 预览生产构建
+npm run preview
+```
+
+## 技术栈
+
+- 编程语言：[TypeScript 5.x](https://www.typescriptlang.org/zh/) + [JavaScript](https://www.javascript.com/)
+- 构建工具：[Vite 6.x](https://cn.vitejs.dev/)
+- 前端框架：[Vue 3.x](https://v3.cn.vuejs.org/)
+- 路由工具：[Vue Router 4.x](https://next.router.vuejs.org/zh/index.html)
+- 状态管理：[Pinia 2.x](https://pinia.vuejs.org/)
+- UI 框架：[Element Plus](https://element-plus.org/#/zh-CN)
+- CSS 预编译：[Sass](https://sass.bootcss.com/documentation)
+- HTTP 工具：[Axios](https://axios-http.com/)
+- Git Hook 工具：[husky](https://typicode.github.io/husky/#/) + [lint-staged](https://github.com/okonet/lint-staged)
+- 代码规范：[EditorConfig](http://editorconfig.org) + [Prettier](https://prettier.io/) + [ESLint](https://eslint.org/) + [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript#translation)
+
+## 项目结构
+
+```
+src/
+├── api/           # API请求
+├── assets/        # 静态资源
+├── components/    # 公共组件
+├── router/        # 路由配置
+├── stores/        # Pinia状态管理
+├── types/         # TypeScript类型定义
+|── utils/         # 工具函数
+└── views/         # 页面视图
 ```
