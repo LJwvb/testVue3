@@ -66,4 +66,4 @@ src/
 
 ## chrome插件
 
-- [Vue.js devtools](href="https://crx.zzzmh.cn/v3/crx/b48f6aa9e09844999f24cc57a94c5c64/nhdogjmejiglipccpnnnanhbledajbpd.zip")
+- devtools：[Vue.js devtools](https://crx.zzzmh.cn/v3/crx/b48f6aa9e09844999f24cc57a94c5c64/nhdogjmejiglipccpnnnanhbledajbpd.zip)
