@@ -63,3 +63,9 @@ src/
 |── utils/         # 工具函数
 └── views/         # 页面视图
 ```
+
+## chrome插件
+
+```
+- [Vue.js devtools](href="https://crx.zzzmh.cn/v3/crx/b48f6aa9e09844999f24cc57a94c5c64/nhdogjmejiglipccpnnnanhbledajbpd.zip")
+```
